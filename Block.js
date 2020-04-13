@@ -41,10 +41,6 @@ const Block = ({
   absRight,
   overflow,
   spaced,
-  btlr,
-  btrr,
-  bblr,
-  bbrr,
 }) => (
   <View
     style={{
@@ -72,10 +68,6 @@ const Block = ({
       // Border
       borderWidth: border || null,
       borderRadius: br || null,
-      borderTopLeftRadius: btlr || null,
-      borderTopRightRadius: btrr || null,
-      borderBottomLeftRadius: bblr || null,
-      borderBottomRightRadius: bbrr || null,
       borderColor: borderColor || 'grey',
       elevation: elevation || null,
       // margin
