@@ -10,12 +10,14 @@ const Block = ({
   middle,
   bottom,
   border,
+  m,
   ml,
   mr,
   mt,
   mb,
   mv,
   mh,
+  p,
   pl,
   pr,
   pt,
@@ -25,10 +27,11 @@ const Block = ({
   row,
   flex,
   width,
+  w100,
   height,
+  h100,
   style,
   br,
-  bw,
   borderColor,
   bg,
   elevation,
@@ -36,29 +39,47 @@ const Block = ({
   absTop,
   absLeft,
   absRight,
+  overflow,
+  spaced,
+  btlr,
+  btrr,
+  bblr,
+  bbrr,
 }) => (
   <View
     style={{
       // flex
       flex: flex || null,
       flexDirection: row ? 'row' : 'column',
-      justifyContent: middle ? 'center' : bottom ? 'flex-end' : null,
+      justifyContent: middle
+        ? 'center'
+        : bottom
+        ? 'flex-end'
+        : spaced
+        ? 'space-between'
+        : null,
       alignItems: center ? 'center' : right ? 'flex-end' : null,
-      // props
+      // view
       position: absolute ? 'absolute' : null,
       top: absTop || null,
       bottom: absBottom || null,
       left: absLeft || null,
       right: absRight || null,
-      width: width || null,
-      height: height || null,
+      width: w100 ? '100%' : width || null,
+      height: h100 ? '100%' : height || null,
       backgroundColor: bg || null,
+      overflow: overflow || null,
       // Border
       borderWidth: border || null,
       borderRadius: br || null,
+      borderTopLeftRadius: btlr || null,
+      borderTopRightRadius: btrr || null,
+      borderBottomLeftRadius: bblr || null,
+      borderBottomRightRadius: bbrr || null,
       borderColor: borderColor || 'grey',
       elevation: elevation || null,
       // margin
+      margin: m || null,
       marginLeft: ml || null,
       marginTop: mt || null,
       marginBottom: mb || null,
@@ -66,6 +87,7 @@ const Block = ({
       marginVertical: mv || null,
       marginHorizontal: mh || null,
       // padding
+      padding: p || null,
       paddingLeft: pl || null,
       paddingRight: pr || null,
       paddingTop: pt || null,
