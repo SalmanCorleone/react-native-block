@@ -47,6 +47,7 @@ const Block = ({
       // flex
       flex: flex || null,
       flexDirection: row ? 'row' : 'column',
+      alignItems: center ? 'center' : right ? 'flex-end' : null,
       justifyContent: middle
         ? 'center'
         : bottom
@@ -54,8 +55,7 @@ const Block = ({
         : spaced
         ? 'space-between'
         : null,
-      alignItems: center ? 'center' : right ? 'flex-end' : null,
-      // view
+      // postions and size
       position: absolute ? 'absolute' : null,
       top: absTop || null,
       bottom: absBottom || null,
@@ -63,9 +63,9 @@ const Block = ({
       right: absRight || null,
       width: w100 ? '100%' : width || null,
       height: h100 ? '100%' : height || null,
-      backgroundColor: bg || null,
+      backgroundColor: bg || '',
       overflow: overflow || null,
-      // Border
+      // border
       borderWidth: border || null,
       borderRadius: br || null,
       borderColor: borderColor || 'grey',
