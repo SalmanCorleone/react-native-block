@@ -41,13 +41,17 @@ const Block = ({
   absRight,
   overflow,
   spaced,
+  z,
+  flexwrap,
+  ratio,
 }) => (
   <View
     style={{
       // flex
       flex: flex || null,
+      flexWrap: flexwrap || null,
+      aspectRatio: ratio || null,
       flexDirection: row ? 'row' : 'column',
-      alignItems: center ? 'center' : right ? 'flex-end' : null,
       justifyContent: middle
         ? 'center'
         : bottom
@@ -55,7 +59,9 @@ const Block = ({
         : spaced
         ? 'space-between'
         : null,
-      // postions and size
+      alignItems: center ? 'center' : right ? 'flex-end' : null,
+      // view
+      zIndex: z || null,
       position: absolute ? 'absolute' : null,
       top: absTop || null,
       bottom: absBottom || null,
@@ -65,7 +71,7 @@ const Block = ({
       height: h100 ? '100%' : height || null,
       backgroundColor: bg || '',
       overflow: overflow || null,
-      // border
+      // Border
       borderWidth: border || null,
       borderRadius: br || null,
       borderColor: borderColor || 'grey',
