@@ -58,6 +58,7 @@ const Block = ({
   ratio,
   shadow,
   minHeight,
+  opacity,
 }) => (
   <View
     style={{
@@ -86,6 +87,7 @@ const Block = ({
       minHeight: minHeight || null,
       backgroundColor: bg || '',
       overflow: overflow || null,
+      opacity: opacity || null,
       // Border
       borderWidth: border || null,
       borderRadius: br || null,
