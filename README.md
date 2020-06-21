@@ -1,5 +1,5 @@
 # react-native-block
-A simple and customizable view component for React Native.
+A simple and customizable wrapper component for React Native View.
 ## Usage
 It's a nice to have this block component on your common component folder.  
 Instead of writing this: 
@@ -14,4 +14,10 @@ You can just do this:
 <Block flex={2} center middle mt={20}>
   // Your components
 </Block>
+```
+For TouchableOpacity
+```
+<TouchableBlock onPress={handler} center middle>
+  // Your components
+</TouchableBlock>
 ```
