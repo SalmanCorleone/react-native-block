@@ -10,13 +10,13 @@ Instead of writing this :
 ```
 You can just do this :
 
-```
+```js
 <Block flex={2} center middle mt={20}>
   // Your components
 </Block>
 ```
 For TouchableOpacity :
-```
+```js
 <TouchableBlock onPress={handler} center middle>
   // Your components
 </TouchableBlock>
