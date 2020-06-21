@@ -2,20 +2,20 @@
 A simple and customizable wrapper component for React Native View.
 ## Usage
 It's a nice to have this block component on your common component folder.  
-Instead of writing this: 
+Instead of writing this : 
 ```js
 <View style={{ flex: 2, justifyContent: 'center', alignItems: 'center', marginTop: 20 }}>
   //Other components
 </View>
 ```
-You can just do this:
+You can just do this :
 
 ```
 <Block flex={2} center middle mt={20}>
   // Your components
 </Block>
 ```
-For TouchableOpacity
+For TouchableOpacity :
 ```
 <TouchableBlock onPress={handler} center middle>
   // Your components
