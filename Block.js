@@ -1,9 +1,9 @@
 /* eslint-disable react-native/no-inline-styles */
-import React from 'react';
-import { View } from 'react-native';
+import React from "react";
+import { SafeAreaView, View } from "react-native";
 
 const shadowProps = {
-  shadowColor: '#000',
+  shadowColor: "#000",
   shadowOffset: {
     width: 0,
     height: 1,
@@ -15,6 +15,7 @@ const shadowProps = {
 };
 
 const Block = ({
+  safe,
   absolute,
   children,
   center,
@@ -59,61 +60,72 @@ const Block = ({
   shadow,
   minHeight,
   opacity,
-}) => (
-  <View
-    style={{
-      // flex
-      flex: flex || null,
-      flexWrap: flexwrap || null,
-      aspectRatio: ratio || null,
-      flexDirection: row ? 'row' : 'column',
-      justifyContent: middle
-        ? 'center'
-        : bottom
-        ? 'flex-end'
-        : spaced
-        ? 'space-between'
-        : null,
-      alignItems: center ? 'center' : right ? 'flex-end' : null,
-      // view
-      zIndex: z || null,
-      position: absolute ? 'absolute' : null,
-      top: absTop || null,
-      bottom: absBottom || null,
-      left: absLeft || null,
-      right: absRight || null,
-      width: w100 ? '100%' : width || null,
-      height: h100 ? '100%' : height || null,
-      minHeight: minHeight || null,
-      backgroundColor: bg || '',
-      overflow: overflow || null,
-      opacity: opacity || null,
-      // Border
-      borderWidth: border || null,
-      borderRadius: br || null,
-      borderColor: borderColor || 'grey',
-      elevation: elevation || null,
-      // margin
-      margin: m || null,
-      marginLeft: ml || null,
-      marginTop: mt || null,
-      marginBottom: mb || null,
-      marginRight: mr || null,
-      marginVertical: mv || null,
-      marginHorizontal: mh || null,
-      // padding
-      padding: p || null,
-      paddingLeft: pl || null,
-      paddingRight: pr || null,
-      paddingTop: pt || null,
-      paddingBottom: pb || null,
-      paddingHorizontal: ph || null,
-      paddingVertical: pv || null,
-      ...(shadow ? shadowProps : null),
-      ...style,
-    }}>
-    {children}
-  </View>
-);
+  ...restProps
+}) => {
+  const styles = {
+    // flex
+    flex: flex || null,
+    flexWrap: flexwrap || null,
+    aspectRatio: ratio || null,
+    flexDirection: row ? "row" : "column",
+    justifyContent: middle
+      ? "center"
+      : bottom
+      ? "flex-end"
+      : spaced
+      ? "space-between"
+      : null,
+    alignItems: center ? "center" : right ? "flex-end" : null,
+    // view
+    zIndex: z || null,
+    position: absolute ? "absolute" : null,
+    top: absTop || null,
+    bottom: absBottom || null,
+    left: absLeft || null,
+    right: absRight || null,
+    width: w100 ? "100%" : width || null,
+    height: h100 ? "100%" : height || null,
+    minHeight: minHeight || null,
+    backgroundColor: bg || "",
+    overflow: overflow || null,
+    opacity: opacity || null,
+    // Border
+    borderWidth: border || null,
+    borderRadius: br || null,
+    borderColor: borderColor || "grey",
+    elevation: elevation || null,
+    // margin
+    margin: m || null,
+    marginLeft: ml || null,
+    marginTop: mt || null,
+    marginBottom: mb || null,
+    marginRight: mr || null,
+    marginVertical: mv || null,
+    marginHorizontal: mh || null,
+    // padding
+    padding: p || null,
+    paddingLeft: pl || null,
+    paddingRight: pr || null,
+    paddingTop: pt || null,
+    paddingBottom: pb || null,
+    paddingHorizontal: ph || null,
+    paddingVertical: pv || null,
+    ...(shadow ? shadowProps : null),
+    ...style,
+  };
+
+  if (safe)
+    return (
+      <SafeAreaView style={styles} {...restProps}>
+        {children}
+      </SafeAreaView>
+    );
+
+  return (
+    <View style={styles} {...restProps}>
+      {children}
+    </View>
+  );
+};
 
 export default Block;
