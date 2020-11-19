@@ -1,9 +1,8 @@
-/* eslint-disable react-native/no-inline-styles */
-import React from "react";
-import { SafeAreaView, View } from "react-native";
+import React from 'react';
+import { SafeAreaView, View } from 'react-native';
 
 const shadowProps = {
-  shadowColor: "#000",
+  shadowColor: '#000',
   shadowOffset: {
     width: 0,
     height: 1,
@@ -67,32 +66,32 @@ const Block = ({
     flex: flex || null,
     flexWrap: flexwrap || null,
     aspectRatio: ratio || null,
-    flexDirection: row ? "row" : "column",
+    flexDirection: row ? 'row' : 'column',
     justifyContent: middle
-      ? "center"
+      ? 'center'
       : bottom
-      ? "flex-end"
+      ? 'flex-end'
       : spaced
-      ? "space-between"
+      ? 'space-between'
       : null,
-    alignItems: center ? "center" : right ? "flex-end" : null,
+    alignItems: center ? 'center' : right ? 'flex-end' : null,
     // view
     zIndex: z || null,
-    position: absolute ? "absolute" : null,
+    position: absolute ? 'absolute' : null,
     top: absTop || null,
     bottom: absBottom || null,
     left: absLeft || null,
     right: absRight || null,
-    width: w100 ? "100%" : width || null,
-    height: h100 ? "100%" : height || null,
+    width: w100 ? '100%' : width || null,
+    height: h100 ? '100%' : height || null,
     minHeight: minHeight || null,
-    backgroundColor: bg || "",
+    backgroundColor: bg || '',
     overflow: overflow || null,
     opacity: opacity || null,
     // Border
     borderWidth: border || null,
     borderRadius: br || null,
-    borderColor: borderColor || "grey",
+    borderColor: borderColor || 'grey',
     elevation: elevation || null,
     // margin
     margin: m || null,
