@@ -1,8 +1,7 @@
 # react-native-block
 A simple and customizable wrapper component for React Native View.
 ## Usage
-It's a nice to have this block component on your common component folder.  
-Instead of writing this : 
+ Instead of writing this : 
 ```js
 <View style={{ flex: 2, justifyContent: 'center', alignItems: 'center', marginTop: 20 }}>
   //Other components
