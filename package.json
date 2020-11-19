@@ -1,0 +1,19 @@
+{
+  "name": "react-native-block",
+  "version": "1.0.0",
+  "description": "A customizable wrapper for react native view",
+  "main": "index.js",
+  "repository": "git@github.com:SalmanCorleone/react-native-block.git",
+  "author": "Salman <samilsalman12@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-native": "^0.63.3"
+  },
+  "devDependencies": {
+    "@react-native-community/eslint-config": "^2.0.0",
+    "eslint": "^7.13.0",
+    "prettier": "^2.1.2"
+  }
+}

@@ -113,12 +113,13 @@ const Block = ({
     ...style,
   };
 
-  if (safe)
+  if (safe) {
     return (
       <SafeAreaView style={styles} {...restProps}>
         {children}
       </SafeAreaView>
     );
+  }
 
   return (
     <View style={styles} {...restProps}>

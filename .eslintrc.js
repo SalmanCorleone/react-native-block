@@ -1,7 +1,7 @@
 module.exports = {
   root: true,
   extends: '@react-native-community',
-  plugins: ['import'],
+  parserOptions: { sourceType: 'module' },
   rules: {
     'no-console': [
       'error',
@@ -10,7 +10,5 @@ module.exports = {
       },
     ],
     'react-hooks/exhaustive-deps': 'warn',
-    'import/no-default-export': 'error',
-    'react-native/no-inline-styles': 'off'
   },
 };
