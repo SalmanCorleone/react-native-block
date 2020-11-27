@@ -1,5 +1,53 @@
 import React from 'react';
-import { TouchableOpacity } from 'react-native';
+import { View } from 'react-native';
+
+interface Props {
+  absolute?: boolean;
+  children?: JSX.Element | JSX.Element[];
+  center?: boolean;
+  right?: boolean;
+  middle?: boolean;
+  bottom?: boolean;
+  b?: number;
+  m?: number;
+  ml?: number;
+  mr?: number;
+  mt?: number;
+  mb?: number;
+  mv?: number;
+  mh?: number;
+  p?: number;
+  pl?: number;
+  pr?: number;
+  pt?: number;
+  pb?: number;
+  pv?: number;
+  ph?: number;
+  row?: boolean;
+  flex?: number;
+  w?: number;
+  w100?: boolean;
+  h?: number;
+  h100?: boolean;
+  style?: any;
+  br?: number;
+  borderColor?: string;
+  bg?: string;
+  elevation?: number;
+  absBottom?: number;
+  absTop?: number;
+  absLeft?: number;
+  absRight?: number;
+  overflow?: string;
+  spaced?: boolean;
+  z?: number;
+  flexwrap?: boolean;
+  ratio?: number;
+  shadow?: boolean;
+  minHeight?: number;
+  maxHeight?: number;
+  opacity?: number;
+}
 
 const shadowProps = {
   shadowColor: '#000',
@@ -13,14 +61,14 @@ const shadowProps = {
   elevation: 3,
 };
 
-const TouchableBlock = ({
+export const Block: React.FC<Props> = ({
   absolute,
   children,
   center,
   right,
   middle,
   bottom,
-  border,
+  b,
   m,
   ml,
   mr,
@@ -37,9 +85,9 @@ const TouchableBlock = ({
   ph,
   row,
   flex,
-  width,
+  w,
   w100,
-  height,
+  h,
   h100,
   style,
   br,
@@ -57,10 +105,10 @@ const TouchableBlock = ({
   ratio,
   shadow,
   minHeight,
+  maxHeight,
   opacity,
-  onPress = () => {},
 }) => {
-  const styles = {
+  const styleObject = {
     // flex
     flex: flex || null,
     flexWrap: flexwrap || null,
@@ -81,14 +129,15 @@ const TouchableBlock = ({
     bottom: absBottom || null,
     left: absLeft || null,
     right: absRight || null,
-    width: w100 ? '100%' : width || null,
-    height: h100 ? '100%' : height || null,
+    width: w100 ? '100%' : w || null,
+    height: h100 ? '100%' : h || null,
     minHeight: minHeight || null,
+    maxHeight: maxHeight || null,
     backgroundColor: bg || '',
     overflow: overflow || null,
     opacity: opacity || null,
     // Border
-    borderWidth: border || null,
+    borderWidth: b || null,
     borderRadius: br || null,
     borderColor: borderColor || 'grey',
     elevation: elevation || null,
@@ -112,11 +161,5 @@ const TouchableBlock = ({
     ...style,
   };
 
-  return (
-    <TouchableOpacity onPress={onPress} style={styles}>
-      {children}
-    </TouchableOpacity>
-  );
+  return <View style={styleObject}>{children}</View>;
 };
-
-export default TouchableBlock;
